@@ -1,0 +1,24 @@
+
+<h3>知識一覧</h3>
+<%= link_to "知識投稿ページ", new_knowledge_path %>
+
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"knowledges",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+<div class="knowledges-container">
+  <% @knowledges.each do |t| %>
+    <%= link_to t.user.name, user_path(t.user_id) %>
+
+    <div class="knowledge">
+      <%= t.about %>
+      <%= t.created_at %>
+      <%= link_to "詳細へ", knowledge_path(t.id) %>
+      <%= link_to "編集する", edit_knowledge_path(t.id) %>
+      <%= button_to "削除する", knowledge_path(t.id), method: :delete %>
+   
+    </div>
+  <% end %>
+</div>

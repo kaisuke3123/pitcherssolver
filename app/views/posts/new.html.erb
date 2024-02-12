@@ -1,0 +1,28 @@
+
+
+<%= form_for @post do |f| %>
+  <div class="form-container">
+    <div class="field">
+      <%= f.label :課題  %>
+      <%= f.text_area :problem, :size => "30x2" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :考えられる原因  %>
+      <%= f.text_area :hypothesis, :size => "30x2" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :video %>
+      <%= f.file_field :video %>
+    </div>
+
+    <%= f.submit "投稿する" %>
+  </div>
+<% end %>
+

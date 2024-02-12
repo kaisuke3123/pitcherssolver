@@ -1,0 +1,165 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.first-block {
+    height: 700px;
+    background-color: #000000;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 50px;
+  }
+  
+  .second-block {
+    height: 300px;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.根本原因発見 {
+    color: #000000;
+    font-size: 30px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.成長を後押し {
+  color: #000000;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pitchersSolver {
+  color: #000000;
+  font-size: 30px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+    
+  .third-block {
+    height: 500px;
+    background-color: #AAAAAA;
+    font-size: 20px;
+    position: relative;
+    
+}
+    
+
+    h4 {
+    color: #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+  
+    .info-title {
+        font-size: 60px;
+        color: #000000;
+        text-align: center;
+  }
+  
+  .forth-block {
+    height: 700px;
+    background-color: #000066;
+    position: relative;
+  }
+
+  .use-title {
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+    .first-para {
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    }
+
+    .second-para {
+      color: #FFFFFF;
+      font-size: 30px;
+      text-align: center;
+     
+    }
+
+    .fifth-block {
+        height: 400px;
+        background-color: #000000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .merit-title {
+        font-size: 50px;
+        color: #FFFFFF;
+        text-align: center;
+    
+        
+       
+}
+    
+    .post-merit {
+        font-size: 30px;
+        color: #FFFFFF;
+        text-align: center;
+        
+    }
+
+    .post-merit-explain {
+        font-size: 20px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    .comment-merit {
+        font-size: 30px;
+        color: #FFFFFF;
+       
+        text-align: center;
+    }
+
+    .comment-merit-explain {
+        font-size: 20px;
+        color: #FFFFFF;
+        
+        text-align: center;
+    }
+
+.merit-title,
+.post-merit,
+.post-merit-explain,
+.comment-merit,
+.comment-merit-explain {
+    line-height:2
+    
+}
+    
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 50px;
+    background-color: #000;
+    font-size: 15px;
+    color: #fff;
+  }

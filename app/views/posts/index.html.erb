@@ -1,0 +1,67 @@
+
+
+
+
+   
+<div class="検索">
+  <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索する'  %>
+  <% if user_signed_in? %>
+    <div class="マイページへ">
+      <%= link_to "マイページへ", user_path(current_user.id) %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+
+<h3>課題一覧</h3>
+
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <div class="posts">
+      <%= link_to post.user.name, user_path(post.user_id) %>
+  
+      <% if post.image? %>
+        <%= image_tag post.image_url, size: "250x200" %>
+      <% elsif post.video? %>
+        <%= video_tag post.video_url, controls: true %>
+      <% end %>
+      
+      <p><strong>課題：</strong> <%= post.problem %></p>
+      <p><strong>仮説原因：</strong> <%= post.hypothesis %></p>
+      <p>投稿日時：</strong> <%= post.created_at %></p>
+
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(post) %>
+          <%= button_to post_like_path(id: post.id, post_id: post.id), method: :delete do %>
+            <p>いいねを取り消す</p><%= post.likes.count %>
+          <% end %>
+        <% else %>
+          <%= button_to post_likes_path(id: post.id, post_id: post.id), method: :post do %>
+            <p>いいね</p><%= post.likes.count %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>いいねの数 = <%= post.likes.count %></p>
+      <% end %>
+      
+      <%= link_to "コメントを投稿", post_path(post.id) %>
+      <%= link_to "編集する", edit_post_path(post.id) %>
+      <%= button_to "削除する", post_path(post.id), method: :delete %>
+
+      <!-- コメントの表示 -->
+      <div class="comments">
+        <% post.comments.each do |comment| %>
+          <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+        <% end %>
+      </div>
+    </div> <!-- .post -->
+  <% end %>
+</div> <!-- .posts-container -->
+
+
+   
+<h2>コメント一覧</h2>
+
